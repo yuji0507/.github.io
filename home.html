@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>猫の兄弟の昼寝</title>
     <style>
-        body {
+                body {
             font-family: Arial, sans-serif;
             background-color: #e4e4e4;
             margin: 0;
@@ -17,18 +17,20 @@
             background-position: center; /* 画像を中央に配置する */
         }
 
-        body :before {
+        /* 背景に透明なオーバーレイを追加 */
+        body::before {
             content: '';
             position: absolute;
             top: 0;
             right: 0;
             bottom: 0;
             left: 0;
-            background-color: rgba(255, 255, 255, 0.5); /* 白色の透明度を調整 */
+            background-color: rgba(255, 255, 255, 0.4); /* 白色の透明度を調整 */
+            z-index: -1; /* 背景よりも後ろに配置 */
         }
 
         header {
-            background-color: #ffffff; /* 背景色を設定し、透明度を指定 */
+            background-color: rgba(0, 0, 0, 0.4); /* ヘッダーの背景色を設定 */
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -36,29 +38,55 @@
 
         .container {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            color: #dddddd;
-        }
-        .cat-image {
-            width: 50%;
             margin: 20px auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 0 20px;
         }
+
+        h1 {
+            color: #dddd;
+            font-size: 28px;
+        }
+        
+        .photo-frame {
+            border: 10px solid #fff; /* 白い枠線 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 影 */
+            padding: 10px; /* 枠線からの余白 */
+            display: inline-block; /* 要素をインラインブロック要素として配置 */
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            /* 写真には影響を与えないようにする */
+            opacity: 1; /* 透明度を元に戻す */
+        }
+
         p {
-            color: #dddddd;
+            margin-bottom: 20px;
         }
-        /* フッターのスタイル 
+
+        .author {
+            font-style: italic;
+        }
+
         footer {
-            background-color: rgba(0, 0, 0, 0.5); 
+            background-color: rgba(255, 255, 255, 0.3); /* フッターの背景色を設定 */
             color: #fff;
             padding: 20px;
             text-align: center;
         }
-        */
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.4); /* 白色の透明度を調整 */
+            z-index: -1; /* 背景よりも後ろに配置 */
+        }
         
         
         
